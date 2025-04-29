@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-static";
+import adapter from "@sveltejs/adapter-netlify"; // Đổi từ static sang netlify
 import { mdsvex } from "mdsvex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
@@ -9,7 +9,7 @@ const config = {
 	extensions: [".svelte", ".md"],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter(), // vẫn giữ cách gọi adapter như cũ
 		prerender: {
 			entries: [
 				"*",
