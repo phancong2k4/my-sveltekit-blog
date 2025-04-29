@@ -1,27 +1,30 @@
 export const load = async ({ url, fetch }) => {
-	const res = await fetch(`${url.origin}/api/posts.json`)
-	let posts = await res.json()
+	const res = await fetch(`${url.origin}/api/posts.json`);
+	let posts = await res.json();
 
-	let uniqueCategories = {}
+	let uniqueCategories = {};
 
 	posts.forEach(post => {
-		post.categories.forEach(category => {
-			if (uniqueCategories.hasOwnProperty(category)) {
-				uniqueCategories[category].count += 1
-			} else {
-				uniqueCategories[category] = {
-					title: category,
-					count: 1
+		// Kiểm tra nếu post.categories tồn tại và là mảng
+		if (Array.isArray(post.categories)) {
+			post.categories.forEach(category => {
+				if (uniqueCategories.hasOwnProperty(category)) {
+					uniqueCategories[category].count += 1;
+				} else {
+					uniqueCategories[category] = {
+						title: category,
+						count: 1
+					};
 				}
-			}
-		})
-	})
+			});
+		}
+	});
 
-	const sortedUniqueCategories = 
+	const sortedUniqueCategories =
 		Object.values(uniqueCategories)
-			.sort((a, b) => a.title > b.title)
+			.sort((a, b) => a.title.localeCompare(b.title));
 
-	return { 
+	return {
 		uniqueCategories: sortedUniqueCategories
-	}
-}
+	};
+};
