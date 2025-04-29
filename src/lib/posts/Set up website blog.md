@@ -5,7 +5,7 @@ author: "Phan Văn Công"
 ---
 **Sinh viên: Phan Văn Công**
 
-![Hệ thống phân tán](/static/images/anh1.png)
+![Hệ thống phân tán](https://i.ytimg.com/vi/s9d9TWsTzNw/maxresdefault.jpg)
 # Hệ thống phân tán là gì?
 
 Hệ thống phân tán (Distributed System) là tập hợp nhiều máy tính độc lập, phối hợp với nhau để thực hiện một mục tiêu chung. Người dùng tương tác với hệ thống như thể nó là một hệ thống duy nhất, mặc dù thực tế nó được phân phối trên nhiều máy khác nhau.
