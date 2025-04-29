@@ -1,4 +1,4 @@
-import adapter from "@sveltejs/adapter-netlify"; // Đổi từ static sang netlify
+import adapter from '@sveltejs/adapter-netlify'; // Đổi từ static sang netlify
 import { mdsvex } from "mdsvex";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
